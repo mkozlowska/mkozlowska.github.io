@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  var apiRoot = 'https://tranquil-hamlet-24877.herokuapp.com/';
+  var apiRoot = 'https://tranquil-hamlet-24877.herokuapp.com/tasks/';
   var datatableRowTemplate = $('[data-datatable-row-template]').children()[0];
   var tasksContainer = $('[data-tasks-container]');
 
@@ -69,7 +69,7 @@ $(document).ready(function() {
     var requestUrl = apiRoot;
 
     $.ajax({
-      url: requestUrl + taskId,
+      url: requestUrl + '/' + taskId,
       method: 'DELETE',
       success: function() {
         parentEl.slideUp(400, function() { parentEl.remove(); });
